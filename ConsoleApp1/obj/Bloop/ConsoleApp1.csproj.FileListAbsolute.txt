@@ -1,0 +1,3 @@
+C:\Users\wu491hk\Documents\Visual Studio 2017\Projects\ConsoleApp1\ConsoleApp1\bin\Bloop\ConsoleApp1.exe.config
+C:\Users\wu491hk\Documents\Visual Studio 2017\Projects\ConsoleApp1\ConsoleApp1\bin\Bloop\ConsoleApp1.exe
+C:\Users\wu491hk\Documents\Visual Studio 2017\Projects\ConsoleApp1\ConsoleApp1\obj\Bloop\ConsoleApp1.exe

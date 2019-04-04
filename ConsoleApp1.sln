@@ -7,10 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Bloop|Any CPU = Bloop|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B80273F9-B483-4764-9586-248007FFA205}.Bloop|Any CPU.ActiveCfg = Debug|Any CPU
+		{B80273F9-B483-4764-9586-248007FFA205}.Bloop|Any CPU.Build.0 = Debug|Any CPU
 		{B80273F9-B483-4764-9586-248007FFA205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B80273F9-B483-4764-9586-248007FFA205}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B80273F9-B483-4764-9586-248007FFA205}.Release|Any CPU.ActiveCfg = Release|Any CPU

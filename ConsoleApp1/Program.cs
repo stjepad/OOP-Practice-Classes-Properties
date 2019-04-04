@@ -6,28 +6,22 @@ using Characters.Warriors;
     {
         static void Main()
         {
-            Warrior theGoodGuy = new Warrior(190, 80, "Good Guy");
-        theGoodGuy.Age = 25;
-            //theGoodGuy.Height = 190;
-            //theGoodGuy.Weight = 80;
-            //theGoodGuy.Name = "Good Guy";
+        Warrior theGoodGuy = new Warrior(190, 80, "Good Guy");
+        //theGoodGuy.Age = 25;
+        //theGoodGuy.Height = 190;
+        //theGoodGuy.Weight = 80;
+        //theGoodGuy.Name = "Good Guy";
 
-            Warrior theBadGuy = new Warrior(170, 70, "Bad Guy");
-        theBadGuy.Age = 15;
-            //theBadGuy.Height = 170;
-            //theBadGuy.Weight = 70;
-            //theBadGuy.Name = "Bad Guy";
+        Warrior theBadGuy = new Warrior(170, 70, "Bad Guy");
+        //theBadGuy.Age = 15;
+        //theBadGuy.Height = 170;
+        //theBadGuy.Weight = 70;
+        //theBadGuy.Name = "Bad Guy";
 
-            theGoodGuy.Greetings(theBadGuy);
-            theBadGuy.Greetings(theGoodGuy);
+        Warrior youngWarrior = new Warrior(100, 50);
+        youngWarrior.Age = 18;
 
-        Console.WriteLine($@"The warrior {theGoodGuy.Name} is {theGoodGuy.Age}");
-        Console.WriteLine($@"The warrior {theBadGuy.Name} is {theBadGuy.Age}");
-
-        Console.WriteLine(theBadGuy.Height);
-            Console.WriteLine("Press any key to exit.");
-            Console.ReadKey();
-
+        Console.WriteLine($@"blOOp {youngWarrior.Age}");
         try
         {
             theGoodGuy.Age = 25;
@@ -37,6 +31,29 @@ using Characters.Warriors;
         {
             Console.WriteLine(ex.Message);
         }
+
+
+        theGoodGuy.Greetings(theBadGuy);
+        theBadGuy.Greetings(theGoodGuy);
+
+        Console.WriteLine($@"The warrior {theGoodGuy.Name} is {theGoodGuy.Age}");
+        Console.WriteLine($@"The warrior {theBadGuy.Name} is {theBadGuy.Age}");
+
+        Console.WriteLine(theBadGuy.Height);
+        Console.WriteLine($@"The damage from the sword of the warrior {theGoodGuy.Name} is {theGoodGuy.SwordWeapon.Damage}!");
+        Console.WriteLine(theGoodGuy.SwordWeapon.Damage);
+
+        Warrior firstWarrior = new Warrior();
+        Warrior secondWarrior = new Warrior(150, 50);
+        Warrior thirdWarrior = new Warrior(140, 78, "I am the third warrior");
+
+
+
+        Console.WriteLine("Press any key to exit.");
+        Console.ReadKey();
+
+
+
     }
     }
 
