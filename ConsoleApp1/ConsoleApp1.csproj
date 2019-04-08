@@ -63,6 +63,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Characters\Warriors\Warrior.cs" />
+    <Compile Include="Tools.cs" />
     <Compile Include="Weapons\Sword.cs" />
   </ItemGroup>
   <ItemGroup>

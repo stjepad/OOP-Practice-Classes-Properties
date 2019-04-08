@@ -8,13 +8,45 @@ namespace Characters.Warriors
 {
     public class Warrior
     {
+        private const int DEFUALT_HEIGHT = 200;
+        private const int DEFAULT_WEIGHT = 200;
+        private const string DEFAULT_NAME = "Youngin Fighter";
+        private const int DEFAULT_AGE = 18;
+        private readonly Sword DEFAULT_SWORD_WEAPON = new Sword();
+
+        public static int idCounter;
+
+        private readonly int id;
         private int height;
         private int weight;
         private string name;
         private int age;
+        private string faction;
 
         private Sword swordWeapon;
 
+        // Properties 
+
+        public string Faction
+        {
+            get
+            {
+                return this.faction;
+            }
+            private set
+            {
+                this.faction = value;
+            }
+        }
+        public int ID
+        {
+            get
+            {
+                return this.id;
+            }
+            //no set value, because it was declared as a readonly.
+        }
+        
         public int Height
         {
             get
@@ -26,7 +58,17 @@ namespace Characters.Warriors
                 height = value;
             }
         }
-        public int Weight { get; set; }
+        public int Weight
+        {
+            get
+            {
+                return this.weight;
+            }
+            set
+            {
+                this.weight = value;
+            }
+        }
         public int Age
         {
             get
@@ -51,11 +93,11 @@ namespace Characters.Warriors
         {
             get
             {
-                return name;
+                return this.name;
             }
             set
             {
-                name = value;
+                this.name = value;
             }
         }
 
@@ -80,7 +122,7 @@ namespace Characters.Warriors
         //constructor
         public Warrior()
             // ': this' gives all constructors in this same class the folowing as default.
-            : this(200, 200)
+            : this(DEFUALT_HEIGHT, DEFAULT_WEIGHT)
         {
             //this.Height = 200;
             //this.Weight = 200;
@@ -91,7 +133,7 @@ namespace Characters.Warriors
 
     // constructor
     public Warrior( int height, int weight)
-            : this(height, weight, "Youngin Fighter")
+            : this(height, weight, DEFAULT_NAME)
         {
             //Height = height;
             //Weight = weight;
@@ -100,21 +142,35 @@ namespace Characters.Warriors
             //this.SwordWeapon = new Sword();
         }
         //constructor
-        public Warrior(int height, int weight, string name)
+        public Warrior(int height, int weight, string name, string faction)
         {
-            Height = height;
-            Weight = weight;
-            Name = name;
-            this.Age = 18;
-            this.SwordWeapon = new Sword();
+            Warrior.idCounter++;
+
+            this.id = idCounter;
+            this.Height = height;
+            this.Weight = weight;
+            this.Name = name;
+            this.Age = DEFAULT_AGE;
+            this.SwordWeapon = DEFAULT_SWORD_WEAPON;
+            this.Faction = faction;
         }
 
+        public static void GetDefaultValues(Warrior warrior)
+        {
+            Console.WriteLine($@"Default Height: {DEFUALT_HEIGHT} " +
+                $"\nDefault Weight: {DEFAULT_WEIGHT} " +
+                $"\nDefault Name: {DEFAULT_NAME} " +
+                $"\nDefault Age: {DEFAULT_AGE} " +
+                $"\nDedault Weapon Damage: {warrior.DEFAULT_SWORD_WEAPON.Damage}");
+        }
 
         public void Greetings(Warrior warrior)
         {
-            Console.WriteLine($@"Hello, {warrior.Name}!");
+            Console.WriteLine($"Hello, {warrior.Name}!");
         }
     }
+
+     
     }
 
 

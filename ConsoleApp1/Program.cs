@@ -44,14 +44,30 @@ using Characters.Warriors;
         Console.WriteLine(theGoodGuy.SwordWeapon.Damage);
 
         Warrior firstWarrior = new Warrior();
+        
+        Console.WriteLine(Warrior.idCounter);
+
         Warrior secondWarrior = new Warrior(150, 50);
+        
+        Console.WriteLine(Warrior.idCounter);
+
         Warrior thirdWarrior = new Warrior(140, 78, "I am the third warrior");
+      
+        Console.WriteLine(Warrior.idCounter);
 
 
+
+        Console.WriteLine(secondWarrior.ID);
+
+        Warrior.GetDefaultValues(firstWarrior);
+
+        Tools.ColorfulWriteLine(firstWarrior.ID.ToString(), ConsoleColor.Cyan);
+        Tools.ColorfulWriteLine(secondWarrior.ID.ToString(), ConsoleColor.Red);
+        Tools.ColorfulWriteLine(thirdWarrior.ID.ToString(), ConsoleColor.DarkYellow);
 
         Console.WriteLine("Press any key to exit.");
         Console.ReadKey();
-
+        
 
 
     }
