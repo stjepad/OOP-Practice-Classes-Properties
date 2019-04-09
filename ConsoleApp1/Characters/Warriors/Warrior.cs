@@ -1,5 +1,6 @@
 ﻿
 using ConsoleApp1.Weapons;
+using Enumerations;
 using System;
 
 
@@ -21,13 +22,25 @@ namespace Characters.Warriors
         private int weight;
         private string name;
         private int age;
-        private string faction;
+        private Faction faction;
+        private int healthPoints;
 
         private Sword swordWeapon;
 
         // Properties 
 
-        public string Faction
+            public int HealthPoints
+        {
+            get
+            {
+                return this.healthPoints;
+            }
+            set
+            {
+                healthPoints = value;
+            }
+        }
+        public Faction Faction
         {
             get
             {
@@ -133,7 +146,7 @@ namespace Characters.Warriors
 
     // constructor
     public Warrior( int height, int weight)
-            : this(height, weight, DEFAULT_NAME)
+            : this(height, weight, DEFAULT_NAME, Faction.Default)
         {
             //Height = height;
             //Weight = weight;
@@ -142,7 +155,7 @@ namespace Characters.Warriors
             //this.SwordWeapon = new Sword();
         }
         //constructor
-        public Warrior(int height, int weight, string name, string faction)
+        public Warrior(int height, int weight, string name, Faction faction)
         {
             Warrior.idCounter++;
 
@@ -153,6 +166,15 @@ namespace Characters.Warriors
             this.Age = DEFAULT_AGE;
             this.SwordWeapon = DEFAULT_SWORD_WEAPON;
             this.Faction = faction;
+
+            if(this.Faction == Faction.GoodGuy)
+            {
+                this.HealthPoints = 120;
+            }
+            else if (this.Faction == Faction.BadGuy)
+            {
+                this.HealthPoints = 100;
+            }
         }
 
         public static void GetDefaultValues(Warrior warrior)

@@ -1,18 +1,18 @@
 ﻿using System;
 using Characters.Warriors;
+using Enumerations;
 
-
-    public class EntryPoint
+public class EntryPoint
     {
         static void Main()
         {
-        Warrior theGoodGuy = new Warrior(190, 80, "Good Guy");
+        Warrior theGoodGuy = new Warrior(190, 80, "Good Guy Name", Faction.GoodGuy);
         //theGoodGuy.Age = 25;
         //theGoodGuy.Height = 190;
         //theGoodGuy.Weight = 80;
         //theGoodGuy.Name = "Good Guy";
 
-        Warrior theBadGuy = new Warrior(170, 70, "Bad Guy");
+        Warrior theBadGuy = new Warrior(170, 70, "Bad Guy Name", Faction.BadGuy);
         //theBadGuy.Age = 15;
         //theBadGuy.Height = 170;
         //theBadGuy.Weight = 70;
@@ -51,10 +51,14 @@ using Characters.Warriors;
         
         Console.WriteLine(Warrior.idCounter);
 
-        Warrior thirdWarrior = new Warrior(140, 78, "I am the third warrior");
+        Warrior thirdWarrior = new Warrior(140, 78, "I am the third warrior", Faction.GoodGuy);
+
+        Warrior fourthWarrior = new Warrior(100, 100, "fourth warrior", Faction.BadGuy);
       
         Console.WriteLine(Warrior.idCounter);
 
+
+        Console.WriteLine($"FourthWarrior health points: {fourthWarrior.HealthPoints}");
 
 
         Console.WriteLine(secondWarrior.ID);
