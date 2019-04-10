@@ -1,5 +1,6 @@
 ﻿using System;
 using Characters.Warriors;
+using Characters.Spellcasters;
 using Enumerations;
 
 public class EntryPoint
@@ -68,6 +69,22 @@ public class EntryPoint
         Tools.ColorfulWriteLine(firstWarrior.ID.ToString(), ConsoleColor.Cyan);
         Tools.ColorfulWriteLine(secondWarrior.ID.ToString(), ConsoleColor.Red);
         Tools.ColorfulWriteLine(thirdWarrior.ID.ToString(), ConsoleColor.DarkYellow);
+
+        firstWarrior.Move(500);
+
+        Mage firstMage = new Mage();
+        firstMage.Move(200);
+
+        try
+        {
+        firstMage.Age = 25;
+        }
+        catch (ArgumentOutOfRangeException ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+
+
 
         Console.WriteLine("Press any key to exit.");
         Console.ReadKey();
