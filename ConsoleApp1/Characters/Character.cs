@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Interfaces;
+using System;
 using System.Threading;
 
 namespace Characters
 {
-    public class Character
+    public abstract class Character : ICalculator
     {
         protected int healthPoints;
         protected int weight;
@@ -94,6 +95,11 @@ namespace Characters
                 Console.WriteLine("I am moving ");
                 Thread.Sleep(PauseBetweenMovements);
             }
+        }
+
+        public virtual void Addition(int firstNumber, int secondNumber)
+        {
+            Console.WriteLine(firstNumber + secondNumber);
         }
     }
 }

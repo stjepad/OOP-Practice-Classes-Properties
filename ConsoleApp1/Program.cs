@@ -33,7 +33,6 @@ public class EntryPoint
             Console.WriteLine(ex.Message);
         }
 
-
         theGoodGuy.Greetings(theBadGuy);
         theBadGuy.Greetings(theGoodGuy);
 
@@ -84,13 +83,19 @@ public class EntryPoint
             Console.WriteLine(ex.Message);
         }
 
+        firstWarrior.Addition(12, 12);
+        firstMage.Addition(200, 200);
 
+        Console.WriteLine($"first warrior health points before attack{firstWarrior.HealthPoints}");
+        Console.WriteLine($"first mage Mana points before attack{firstMage.Mana}");
+
+        firstMage.CastSpell(firstWarrior);
+
+        Console.WriteLine($"first warrior health points after attack{firstWarrior.HealthPoints}");
+        Console.WriteLine($"first mage Mana points after attack{firstMage.Mana}");
 
         Console.WriteLine("Press any key to exit.");
         Console.ReadKey();
-        
-
-
     }
     }
 

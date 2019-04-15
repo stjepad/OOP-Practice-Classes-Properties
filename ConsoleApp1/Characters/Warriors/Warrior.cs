@@ -1,14 +1,16 @@
 ﻿
 
+using ConsoleApp1.Characters;
 using ConsoleApp1.Weapons;
 using Enumerations;
+using Interfaces;
 using System;
 
 
 namespace Characters.Warriors
 
 {
-    public class Warrior : Character
+    public class Warrior : Melee, ICalculator
 
     {
         private const int DEFUALT_HEIGHT = 200;
@@ -217,6 +219,12 @@ namespace Characters.Warriors
         {
             base.Move(PauseBetweenMovements);
             Console.WriteLine("I just moved 10 times I am a warrior");
+        }
+
+        //Implemented Interface
+        public override void Addition(int firstNumber, int secondNumber)
+        {
+            Console.WriteLine(firstNumber + secondNumber);
         }
     }
 
