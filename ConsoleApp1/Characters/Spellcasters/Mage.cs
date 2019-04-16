@@ -7,7 +7,7 @@ using ConsoleApp1.Weapons;
 
 namespace Characters.Spellcasters
 {
-    public class Mage : Character, ICalculator, ISpellcaster
+    public class Mage : Character, ISpellcaster, ICalculator
     {
         private int mana;
         private Spell mySpell;
@@ -60,9 +60,9 @@ namespace Characters.Spellcasters
             }
         }
 
-        public void CastSpell(Warrior warrior)
+        public void CastSpell(Character character)
         {
-            warrior.HealthPoints = warrior.HealthPoints - this.mySpell.Damage;
+            character.HealthPoints = character.HealthPoints - this.mySpell.Damage;
             this.mana = this.mana - this.mySpell.ManaCost;
         }
 

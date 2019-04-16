@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace Characters
 {
-    public abstract class Character : ICalculator
+    public abstract class Character
     {
         protected int healthPoints;
         protected int weight;
@@ -82,7 +82,7 @@ namespace Characters
             this.Age = age;
         }
 
-        protected void Greetings(string name)
+        public void Greetings(string name)
         {
             Console.WriteLine($@"!!!!!!!!!!!!!!{this.name} greets {name}!");
         }

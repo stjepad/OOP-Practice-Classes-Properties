@@ -2,6 +2,9 @@
 using Characters.Warriors;
 using Characters.Spellcasters;
 using Enumerations;
+using Characters;
+using System.Collections.Generic;
+using Interfaces;
 
 public class EntryPoint
     {
@@ -94,9 +97,52 @@ public class EntryPoint
         Console.WriteLine($"first warrior health points after attack{firstWarrior.HealthPoints}");
         Console.WriteLine($"first mage Mana points after attack{firstMage.Mana}");
 
+        //Polymorphism
+        //Character seventhWarrior = new Warrior();
+        //Warrior tempWarrior = (Warrior)seventhWarrior;
+        
+
+        List<Character> theCharacters = new List<Character>();
+
+        
+        //Warrior tempWarrior = (Warrior)theCharacters[0];
+
+        // way #1... Foreach loop to get specific details of a type of character from a list
+        //foreach (var character in theCharacters)
+        //{
+        //    if (character.GetType().Name == "Warrior")
+        //    {
+        //        Warrior tempWarrior = (Warrior)character;
+        //        Console.WriteLine(tempWarrior.SwordWeapon.Damage);
+        //    }
+        //}
+
+        // way #2...ForEach loop to get specific details of a type of character from a list
+        foreach (var character in theCharacters)
+        {
+            if (character is Warrior)
+            {
+                Warrior tempWarrior = character as Warrior;
+                Console.WriteLine(tempWarrior.SwordWeapon.Damage);
+            }
+        }
+
+        List<ICalculator> calculators = new List<ICalculator>();
+
+        theCharacters.Add(firstWarrior);
+        theCharacters.Add(firstMage);
+
+        PerformGreeting(theCharacters);
         Console.WriteLine("Press any key to exit.");
         Console.ReadKey();
     }
+        public static void PerformGreeting(IEnumerable<Character> characters)
+        {
+            foreach (var item in characters)
+            {
+                item.Greetings("Tod");
+            }
+        }
     }
 
 
